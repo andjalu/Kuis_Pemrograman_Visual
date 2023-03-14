@@ -12,6 +12,15 @@ class MyApp extends StatefulWidget {
   }
 }
 
+class Data {
+  String nama = "";
+  String skor = "";
+  String jenis = "";
+  String imbalHasil = "";
+  String hargaUnit = "";
+  String danaKelolaan = "";
+}
+
 class MyAppState extends State<MyApp> {
   final textEditController = TextEditingController();
 
@@ -47,7 +56,7 @@ class MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: MediaQuery.of(context).size.width * 0.65,
+                width: 800,
                 alignment: Alignment.center,
                 child: Column(children: [
                   DropdownButton(
@@ -58,6 +67,7 @@ class MyAppState extends State<MyApp> {
                         if (newValue != null) {
                           pilihanWaktu = newValue;
                         }
+                        if (pilihanWaktu == 6) {}
                       });
                     },
                   ),
@@ -65,65 +75,67 @@ class MyAppState extends State<MyApp> {
               ),
               // card 1
               Container(
-                  width: MediaQuery.of(context).size.width * 0.65,
+                  width: 800,
                   decoration: BoxDecoration(border: Border.all()),
                   alignment: Alignment.center,
-                  child: Column(children: [
-                    Container(
-                        child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Image.network(
-                          'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
-                          height: 50,
-                        ),
                         Container(
-                            child: Column(
+                            child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            const Text("Securinvest Sharia Sukuk Fund"),
-                            const Icon(Icons.stars),
-                            const Text("4.1 -Pendapatan Tetap"),
+                            Image.network(
+                              'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
+                              height: 50,
+                            ),
+                            Container(
+                                child: Column(
+                              children: [
+                                const Text("Securinvest Sharia Sukuk Fund"),
+                                const Text("⭐4.1 -Pendapatan Tetap"),
+                              ],
+                            )),
+                            Image.network(
+                              'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
+                              height: 50,
+                            ),
                           ],
                         )),
-                        Image.network(
-                          'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
-                          height: 50,
-                        ),
-                      ],
-                    )),
-                    Container(
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                          Container(
-                              child: Column(
-                            children: [
-                              const Text("Imbal Hasil"),
-                              const Text("12%")
-                            ],
-                          )),
-                          Container(
-                              child: Column(children: [
-                            const Text("Harga Unit"),
-                            const Text("Rp.1070")
-                          ])),
-                          Container(
-                            child: Column(children: [
-                              Text("Dana Kelolaan"),
-                              Text("Rp.3.3T")
-                            ]),
-                          )
-                        ]))
-                  ])),
+                        Container(
+                            child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                              Container(
+                                  child: Column(
+                                children: [
+                                  const Text("Imbal Hasil"),
+                                  const Text("12%")
+                                ],
+                              )),
+                              Container(
+                                  child: Column(children: [
+                                const Text("Harga Unit"),
+                                const Text("Rp.1070")
+                              ])),
+                              Container(
+                                child: Column(children: [
+                                  Text("Dana Kelolaan"),
+                                  Text("Rp.3.3T")
+                                ]),
+                              )
+                            ]))
+                      ])),
 
               // Card 2
               Container(
-                  width: ,
+                  width: 800,
                   decoration: BoxDecoration(border: Border.all()),
                   child: Column(children: [
                     Container(
                         child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Image.network(
                           'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
@@ -144,7 +156,7 @@ class MyAppState extends State<MyApp> {
                     )),
                     Container(
                         child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                           Container(
                               child: Column(
